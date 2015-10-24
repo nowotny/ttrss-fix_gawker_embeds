@@ -55,7 +55,7 @@ class fix_gawker_embeds extends Plugin {
 			
 			# Replace the YouTube embed with the original
 			
-			$article['content'] = preg_replace('#src="/ajax/inset/iframe\?id=youtube-video-([^&]+)&#i', 'src="https://www.youtube.com/embed/$1"', $article['content']);
+			$article['content'] = preg_replace('#src="/ajax/inset/iframe\?id=youtube-video-([^&]+)[^"]+"#i', 'src="https://www.youtube.com/embed/$1"', $article['content']);
 			
 		}
 		
