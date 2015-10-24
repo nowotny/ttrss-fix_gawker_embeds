@@ -1,5 +1,5 @@
 # ttrss-fix_gawker_embeds
-Tiny Tiny RSS plugin that fixes the broken embeds in various Gawker feeds. Currently it only fixes the YouTube embeds.
+Tiny Tiny RSS plugin that fixes the broken embeds in various Gawker feeds. Currently it only fixes YouTube and Vimeo embeds.
 
 ## Installation
 * [Download the plugin](https://github.com/nowotny/ttrss-fix_gawker_embeds/archive/master.zip) to your Tiny Tiny RSS server
@@ -13,5 +13,8 @@ After enabling the plugin it'll take each new article that Tiny Tiny RSS downloa
 There is also a panel in the `Preferences` that allows you to apply the fixes to already downloaded articles.
 
 ## Changelog
+v. 1.1
+* Added Vimeo embed support
+
 v. 1.0
 * Initial release
