@@ -51,16 +51,18 @@ class fix_gawker_embeds extends Plugin {
 	
 	function make_fixes($article){
 				
-		if ( strpos($article['content'], 'src="/ajax/inset/iframe?id=') !== false ){
+		if ( strpos($article['content'], '/ajax/inset/iframe?id=') !== false ){
 			
 			# Replace the YouTube video embed with the original
-			$article['content'] = preg_replace('#src="/ajax/inset/iframe\?id=youtube-video-([^&]+)[^"]+"#i', 'src="https://www.youtube.com/embed/$1"', $article['content']);
+			$article['content'] = preg_replace('#src="(?:https://kinja.com|)/ajax/inset/iframe\?id=youtube-video-([^&]+)[^"]+"#i', 'src="https://www.youtube.com/embed/$1"', $article['content']);
 			
 			# Replace the YouTube playlist embed with the original
-			$article['content'] = preg_replace('#src="/ajax/inset/iframe\?id=youtube-list-([^&/]+)/([^&]+)[^"]+"#i', 'src="https://www.youtube.com/embed/$1?list=$2"', $article['content']);
+			$article['content'] = preg_replace('#src="(?:https://kinja.com|)/ajax/inset/iframe\?id=youtube-list-([^&/]+)/([^&]+)[^"]+"#i', 'src="https://www.youtube.com/embed/$1?list=$2"', $article['content']);
 			
 			# Replace the Vimeo embed with the original
-			$article['content'] = preg_replace('#src="/ajax/inset/iframe\?id=vimeo-([^&]+)[^"]+"#i', 'src="https://player.vimeo.com/video/$1"', $article['content']);
+			$article['content'] = preg_replace('#src="(?:https://kinja.com|)/ajax/inset/iframe\?id=vimeo-([^&]+)[^"]+"#i', 'src="https://player.vimeo.com/video/$1"', $article['content']);
+			
+			
 			
 		}
 		
