@@ -16,6 +16,7 @@ class fix_gawker_embeds extends Plugin {
 
 		$host->add_hook($host::HOOK_ARTICLE_FILTER, $this);
 		$host->add_hook($host::HOOK_PREFS_TAB, $this);
+		$host->add_hook($host::HOOK_SANITIZE, $this);
 	}
 	
 	function hook_prefs_tab($args){
@@ -70,6 +71,12 @@ class fix_gawker_embeds extends Plugin {
 		return $article;
 	}
 	
+	function hook_sanitize($doc, $site_url, $allowed_elements, $disallowed_attributes) {
+		
+		array_push($allowed_elements, 'picture');
+		
+		return array($doc, $allowed_elements, $disallowed_attributes);
+	}
 	
 	function hook_article_filter($article){
 
