@@ -5,7 +5,7 @@ class fix_gawker_embeds extends Plugin {
 	private $dbh;
 
 	function about(){
-		return array(1.1,
+		return array(1.2,
 			'This plugin fixes the problem with embeded content in Gawker\'s various feeds.',
 			'nowotny');
 	}

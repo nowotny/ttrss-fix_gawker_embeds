@@ -13,6 +13,9 @@ After enabling the plugin it'll take each new article that Tiny Tiny RSS downloa
 There is also a panel in the `Preferences` that allows you to apply the fixes to already downloaded articles.
 
 ## Changelog
+v. 1.2
+* Added fix for images not showing up
+
 v. 1.1
 * Added Vimeo embed support
 
